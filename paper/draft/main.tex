@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,authblk,hyperref,microtype}
+
+\usepackage[
+	backend=biber,
+    sorting=none,
+    citestyle=numeric-comp,
+	bibstyle=ieee,
+	natbib=true,
+	hyperref=true,
+	alldates=year,
+    autocite=superscript,
+]{biblatex}
+
+\addbibresource{main.bib}
+
+\linespread{2.0}
+
+\author[1]{Your Name\thanks{E-mail: your.email@example.com}}
+\affil[1]{Your Institution, Department, Address}
+
+\title{Your Title}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    ...
+\end{abstract}
+
+\section{Introduction}
+
+...\autocite{Dummy2024}
+
+\section{Methods}
+
+...
+
+\section{Results}
+
+...
+
+\section{Conclusions}
+
+...
+
+\section*{Acknowledgement}
+
+...
+
+\section*{Supporting Information}
+
+...
+
+\section*{Data Availability Statement}
+
+...
+
+\printbibliography
+
+\end{document}

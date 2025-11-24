@@ -71,9 +71,6 @@ site/
 # Temporary files created by editors
 data/
 
-# Paper folder
-paper/
-
 # Results and outputs (consider what to track)
 results/
 outputs/
@@ -81,16 +78,18 @@ outputs/
 *.out
 
 # Paper compilation artifacts
-paper/*.pdf
-paper/*.aux
-paper/*.bbl
-paper/*.blg
-paper/*.log
-paper/*.out
-paper/*.toc
-paper/*.synctex.gz
-paper/*.fdb_latexmk
-paper/*.fls
+*.pdf
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.run.xml
+*.fls
+*.bcf
 
 # Environment and secrets
 .env
