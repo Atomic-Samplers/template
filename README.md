@@ -9,16 +9,15 @@ A modern, production-ready Python template for academic research projects with b
 
 ## 📖 Table of contents
 
-- [Quick Start](#quick-start)
-- [Installation Options](#installation-options)
-- [Project Structure](#project-structure)
-- [Development Workflow](#development-workflow)
-- [Paper Management](#paper-management)
-- [Testing](#testing)
-- [Documentation](#documentation)
-- [Code Quality](#code-quality)
-- [Publishing & Archiving](#publishing--archiving)
-- [Contributing](#contributing)
+- [Quick start](#🚀-quick-start)
+- [Installation options](#⚙️-installation-options)
+- [Code quality tools (optional)](#code-quality-tools-optional)
+- [Paper management](#📄-paper-management)
+- [Testing (optional)](#🧪-testing-optional)
+- [Documentation (optional)](#📚-documentation-optional)
+- [Quick Command Reference](#quick-command-reference)
+- [Quick file structure overview](#quick-file-structure-overview)
+- [License](#license)
 
 ## 🚀 Quick start
 
@@ -151,11 +150,8 @@ black --check .
 <summary><b>pyright (type checking)</b></summary>
 
 ```bash
-# install pyright
-uv add --dev pyright
-
-# run type checking
-uv run pyright
+# just run pyright
+pyright
 ```
 </details>
 
@@ -190,44 +186,43 @@ git commit -m "Your commit message" # <- hooks run at this point
 - **`blacken-docs`** - Format code in documentation
 - **`trailing-whitespace`** & **`end-of-file-fixer`** - Clean up files
 
-## Paper Management 📝
-
-The folder `paper/` is set up for managing your academic paper using LaTeX. Two options:
-
-- You are okay with the paper being part of the same repository, so you can version control it together with the code. In this case you can keep the `paper/` folder as is.
-- You prefer to have the paper in a separate repository. In this case, you can run `git init` inside the `paper/` folder to create a new Git repository there, and push it to a new remote repository. This way, the paper and code can evolve independently, and the paper can remain private if needed.
-
 ## 🧪 Testing (optional)
 
-### Running Tests
+### Running tests
 
 ```bash
 # Run all tests
-uv run pytest
+pytest
 
 # Run with coverage
-uv run pytest --cov=template --cov-report=html
+pytest --cov=template --cov-report=html
 
 # Run specific test file
-uv run pytest tests/test_core.py
+pytest tests/test_core.py
 
 # Run with verbose output
-uv run pytest -v
+pytest -v
+
+# Run printing stdout during tests
+pytest -s
+
+# Run and stop after first failure
+pytest -x
+
+# Run only tests matching a keyword
+pytest -k "keyword"
 ```
 
-### Writing Tests
+### Writing tests
 
-Place tests in the `tests/` directory:
+Place tests in the `tests/` directory, the folder structure does not really matter but it is recommended to mirror the structure of the `src/template/` source code folder.
 
 ```python
-# tests/test_core.py
-from template.core import example_function
+from template.examples.example import example_function
 
 
 def test_example_function():
-    """Test the example function."""
-    result = example_function(42)
-    assert result == 84
+    assert example_function().startswith("Hello from")
 ```
 
 ### Code coverage (optional)
@@ -271,7 +266,7 @@ To enable to the github repository:
 2. Source: Deploy from a branch
 3. Branch: `gh-pages` / `root`
 
-## Quick Command Reference
+## Quick command reference
 
 - [`uv` cheatsheet](https://docs.astral.sh/uv/getting-started/features/#python-versions)
 - [`conda` cheatsheet](https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html)

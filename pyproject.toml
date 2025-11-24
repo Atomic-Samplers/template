@@ -41,7 +41,7 @@ dev = ["ruff", "black[jupyter]", "docformatter", "pyright", "pre-commit"] # Deve
 template = ["py.typed"] # The project is PEP 561 compliant (https://peps.python.org/pep-0561/)
 
 [tool.pyright]
-include = ["src", "tests"] # Directories to include in type checking
+include = ["src", "tests", "scripts", "notebooks"] # Directories to include in type checking
 exclude = ["**/__pycache__"] # Exclude cache directories
 
 [tool.pytest.ini_options]
