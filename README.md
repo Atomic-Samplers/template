@@ -10,12 +10,10 @@ A modern, production-ready Python template for academic research projects with b
 ## 📖 Table of contents
 
 - [Quick start](#🚀-quick-start)
-- [Installation options](#⚙️-installation-options)
-- [Code quality tools (optional)](#code-quality-tools-optional)
-- [Paper management](#📄-paper-management)
-- [Testing (optional)](#🧪-testing-optional)
-- [Documentation (optional)](#📚-documentation-optional)
-- [Quick Command Reference](#quick-command-reference)
+- [Installation options](#⚙️-installation)
+- [Code quality tools](#code-quality-tools)
+- [Testing](#🧪-testing)
+- [Documentation](#📚-documentation)
 - [Quick file structure overview](#quick-file-structure-overview)
 - [License](#license)
 
@@ -116,8 +114,7 @@ uv sync --extra dev --extra docs --extra tests
 # pip or conda
 pip install -e ".[dev, docs, tests]"
 ```
-
-## Code quality tools (optional)
+## Code quality tools
 
 <details>
 <summary><b>ruff (linting)</b></summary>
@@ -186,7 +183,7 @@ git commit -m "Your commit message" # <- hooks run at this point
 - **`blacken-docs`** - Format code in documentation
 - **`trailing-whitespace`** & **`end-of-file-fixer`** - Clean up files
 
-## 🧪 Testing (optional)
+## 🧪 Testing
 
 ### Running tests
 
@@ -225,9 +222,9 @@ def test_example_function():
     assert example_function().startswith("Hello from")
 ```
 
-### Code coverage (optional)
+### Code coverage
 
-Codecov allows you to track code coverage over time and identify untested parts of your codebase. To enable coverage reports with Codecov:
+Codecov allows you to track code coverage over time and identify untested parts of your codebase, you can see the coverage report [here](https://app.codecov.io/gh/Atomic-Samplers/template). To enable coverage reports with Codecov:
 
 1. Sign up at [codecov.io](https://about.codecov.io/)
 2. Give codecov access to your GitHub repository (must be public for free plan) and configure it.
@@ -237,7 +234,7 @@ Codecov allows you to track code coverage over time and identify untested parts 
 
 The workflow in `.github/workflows/tests.yml` is already set up to upload coverage reports to Codecov when pushing to the repository. Coverage uploads automatically when configured.
 
-## 📚 Documentation (optional)
+## 📚 Documentation
 
 Documentation is built with [MkDocs](https://www.mkdocs.org/) and [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
 
@@ -256,15 +253,16 @@ mkdocs build
 - Documentation files live in `docs/`, structured in Markdown.
 - Configuration in `mkdocs.yml`
 
-### Automatic site deployment (optional)
+### Automatic site deployment
 
 Using github actions, you can automatically deploy documentation to GitHub Pages on each push to `main`. Documentation automatically deploys to GitHub Pages on push to `main`. View at:
 `https://USERNAME.github.io/REPO`
 
-To enable to the github repository:
+To enable, go to your GitHub repository:
 1. Go to Settings → Pages
 2. Source: Deploy from a branch
-3. Branch: `gh-pages` / `root`
+3. Branch: `gh-pages` keep the folder to `root/`
+4. Save
 
 ## Quick command reference
 
@@ -277,10 +275,6 @@ To enable to the github repository:
 - `src/` - Main package source code
 - `tests/` - Unit and integration tests
 - `docs/` - Documentation source files
-- `config/` - Configuration files for various tools and environments, for reproducibility
-- `paper/` - LaTeX files for academic paper
-- `scripts/` - Utility scripts for data processing, analysis, etc.
-- `notebooks/` - Jupyter notebooks for exploration and prototyping
 - `.venv/` - Virtual environment (if using venv)
 - `.github/workflows/` - GitHub Actions workflows for CI/CD, testing, and deployment
 - `.pre-commit-config.yaml` - Pre-commit hooks configuration
@@ -298,3 +292,7 @@ To enable to the github repository:
 ## License
 
 This project is licensed under the terms of the BSD 3-Clause license.
+
+## Acknowledgements
+
+This template was heavily inspired by Quacc's project template: [https://github.com/Quacc/Quacc](https://github.com/Quacc/Quacc)

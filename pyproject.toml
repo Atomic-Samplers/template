@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools"] # Specify build system requirements
-build-backend = "setuptools.build_meta" # Explicitly use setuptools as build backend
+requires = ["uv_build"] # Specify build system requirements
+build-backend = "uv_build" # Explicitly use uv_build as build backend
 
 [project]
 name = "template"
@@ -9,6 +9,7 @@ version = "0.0.1"
 readme = "README.md"
 license = { text = "BSD-3" }
 authors = [{ name = "Your name", email = "your.email@example.com" }]
+keywords = ["template", "example", "package"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
@@ -25,6 +26,9 @@ classifiers = [
 requires-python = ">=3.10, <3.14"
 dependencies = [] # Add runtime dependencies here
 
+[tool.uv]
+package = true # Indicate that this is a package
+
 [project.optional-dependencies]
 docs = [
     "mkdocs-material",
@@ -37,10 +41,8 @@ docs = [
 tests = ["pytest", "pytest-cov"]
 dev = ["ruff", "black[jupyter]", "docformatter", "pyright", "pre-commit"] # Development dependencies
 
-[tool.setuptools.package-data]
-template = ["py.typed"] # The project is PEP 561 compliant (https://peps.python.org/pep-0561/)
-
 [tool.pyright]
+enableExperimentalFeatures = true # Enable experimental features in Pyright
 include = ["src", "tests", "scripts", "notebooks"] # Directories to include in type checking
 exclude = ["**/__pycache__"] # Exclude cache directories
 
