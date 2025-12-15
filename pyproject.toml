@@ -39,11 +39,11 @@ docs = [
     "cairosvg>=2.7.1"
 ]
 tests = ["pytest", "pytest-cov"]
-dev = ["ruff", "black[jupyter]", "docformatter", "pyright", "pre-commit"] # Development dependencies
+dev = ["ruff", "black", "docformatter", "pyright", "pre-commit"] # Development dependencies
 
 [tool.pyright]
 enableExperimentalFeatures = true # Enable experimental features in Pyright
-include = ["src", "tests", "scripts", "notebooks"] # Directories to include in type checking
+include = ["src", "tests"] # Directories to include in type checking
 exclude = ["**/__pycache__"] # Exclude cache directories
 
 [tool.pytest.ini_options]
@@ -66,7 +66,7 @@ extend-exclude = ''' # Extend the default exclude pattern to ignore virtual envi
 skip-magic-trailing-comma = true # Disable skipping of magic trailing commas
 
 [tool.ruff]
-src = ["src", "tests", "notebooks", "scripts"] # Source directory to lint
+src = ["src", "tests"] # Source directory to lint
 lint.select = [
   "A",
   "ARG",
