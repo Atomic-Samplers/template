@@ -31,12 +31,12 @@ package = true # Indicate that this is a package
 
 [project.optional-dependencies]
 docs = [
-    "mkdocs-material",
-    "mkdocstrings[python]",
-    "mkdocs-gen-files",
-    "mkdocs-literate-nav",
-    "pillow",
-    "cairosvg"
+    "mkdocs-material>=9.4.0",
+    "mkdocstrings-python>=2.0.0",
+    "mkdocs-gen-files>=0.5.0",
+    "mkdocs-literate-nav>=0.6.0",
+    "pillow>=10.0.0",
+    "cairosvg>=2.7.1"
 ]
 tests = ["pytest", "pytest-cov"]
 dev = ["ruff", "black[jupyter]", "docformatter", "pyright", "pre-commit"] # Development dependencies
