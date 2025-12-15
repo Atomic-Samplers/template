@@ -2,10 +2,11 @@
 
 A modern, production-ready Python template for academic research projects with built-in support for reproducibility, documentation, testing, and publication workflows.
 
-[![Documentation](https://img.shields.io/badge/docs-mkdocs-blue)](https://USERNAME.github.io/REPO)
-[![GitHub license](https://img.shields.io/github/license/Atomic-Samplers/template)](https://github.com/Atomic-Samplers/template/blob/main/LICENSE.md)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![docs](https://img.shields.io/badge/docs-mkdocs-blue)](https://USERNAME.github.io/REPO)
+[![license](https://img.shields.io/github/license/Atomic-Samplers/template)](https://github.com/Atomic-Samplers/template/blob/main/LICENSE.md)
+[![style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+[![pyright](https://microsoft.github.io/pyright/img/pyright_badge.svg)](https://microsoft.github.io/pyright/)
 
 ## 📖 Table of contents
 
