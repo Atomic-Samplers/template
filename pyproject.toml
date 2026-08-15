@@ -81,6 +81,10 @@ max-args = 8
 "__init__.py" = ["F401", "I002"]
 "tests/**" = ["ANN", "ARG", "D", "E402", "PTH", "S101", "PLR2004", "I002"]
 
+[tool.ty.src]
+include = ["src", "tests"]
+exclude = ["docs/**", ".github/**"]
+
 [tool.ty.rules]
 all = "error"
 
