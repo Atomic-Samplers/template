@@ -10,10 +10,10 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  docs:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: check out repo
@@ -24,16 +24,31 @@ jobs:
         with:
           enable-cache: true
 
-      - name: set up python
-        run: uv python install 3.13
-
       - name: install dependencies
-        run: uv sync --extra docs
+        run: uv sync --group docs
+
+      - name: generate api reference
+        run: uv run python .github/scripts/generate_api_documentation.py
 
       - name: build docs
-        run: uv run mkdocs build
-        id: build_docs
+        run: uv run zensical build --clean
 
-      - name: rebuild and deploy docs
-        run: uv run mkdocs gh-deploy --force
-        if: github.ref == 'refs/heads/main' && steps.build_docs.outcome == 'success'
+      - name: upload pages artifact
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

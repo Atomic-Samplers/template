@@ -1,4 +1,3 @@
-# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -23,14 +22,12 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-# Virtual environments
 .venv/
 venv/
 ENV/
 env/
 .virtualenv/
 
-# Testing and Coverage
 .coverage
 .coverage.*
 coverage.xml
@@ -41,12 +38,10 @@ htmlcov/
 .tox/
 .nox/
 
-# Jupyter Notebooks
 .ipynb_checkpoints
 *.ipynb_checkpoints/
 */.ipynb_checkpoints/*
 
-# IDEs
 .vscode/
 .idea/
 *.swp
@@ -55,29 +50,24 @@ htmlcov/
 *.sublime-project
 *.sublime-workspace
 
-# MyPy
 .mypy_cache/
 .dmypy.json
 dmypy.json
 
-# Ruff
 .ruff_cache/
 
-# Documentation builds
-docs/_build/
-docs/.doctrees/
+.cache/
 site/
+*doctrees*
+docs/reference/*
 
-# Temporary files created by editors
 data/
 
-# Results and outputs (consider what to track)
 results/
 outputs/
 *.log
 *.out
 
-# Paper compilation artifacts
 *.pdf
 *.aux
 *.bbl
@@ -91,18 +81,15 @@ outputs/
 *.fls
 *.bcf
 
-# Environment and secrets
 .env
 .env.local
 *.key
 *.pem
 
-# OS
 .DS_Store
 Thumbs.db
 Desktop.ini
 
-# Temporary files
 *.tmp
 *.temp
 ~*
