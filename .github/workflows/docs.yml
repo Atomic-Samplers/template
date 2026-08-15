@@ -25,7 +25,7 @@ jobs:
           enable-cache: true
 
       - name: install dependencies
-        run: uv sync --locked --group docs
+        run: uv sync --group docs
 
       - name: generate api reference
         run: uv run python .github/scripts/generate_api_documentation.py
