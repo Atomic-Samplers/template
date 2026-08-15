@@ -8,30 +8,15 @@ repos:
     rev: v0.14.3
     hooks:
       - id: ruff
-        language_version: python3.13
         types_or: [python, jupyter]
-        args: [--fix, --unsafe-fixes]
-
-  - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 25.9.0
-    hooks:
-      - id: black
+        args: [--fix]
+      - id: ruff-format
         types_or: [python, jupyter]
-        language_version: python3.13
-        additional_dependencies: ['.[jupyter]']
 
-  - repo: https://github.com/PyCQA/docformatter
-    rev: v1.7.7
+  - repo: https://github.com/astral-sh/ty-pre-commit
+    rev: v0.0.72
     hooks:
-      - id: docformatter
-        language_version: python3.13
-        args: [-r, -i]
-
-  - repo: https://github.com/adamchainz/blacken-docs
-    rev: 1.20.0
-    hooks:
-      - id: blacken-docs
-        language_version: python3.13
+      - id: ty
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
